@@ -4,17 +4,17 @@ TweetHub is a Django-based web application that allows users to create, view, ed
 
 ## Deployed
 
-You can access the live application at the following link:
-
-[Visit TweetHub](https://sinhasaurabh079.pythonanywhere.com/app/)
+You can access the live application at the following link: [Visit TweetHub](https://sinhasaurabh079.pythonanywhere.com/app/)
 
 ## Features
 
-- **User Authentication**: Users can register, log in, and manage their profiles.
-- **Tweet Management**: Users can create, view, edit, and delete their tweets.
-- **Admin Interface**: Admins can manage users and tweets through the Django admin interface.
-- **Media Handling**: Support for uploading and displaying media files with tweets.
-
+- **User Authentication:** Users can register, log in, and manage their profiles.
+- **Tweet Management:** Users can create, view, edit, and delete their tweets. They can view all tweets but can only delete their own.
+- **Home View:** Browse all tweets from all users.
+- **My Tweets Section:** Access a dedicated page to view tweets specific to the logged-in user.
+- **Search Functionality:** Search for tweets by keywords.
+- **Admin Interface:** Admins can manage users and tweets through the Django admin panel.
+- **Media Handling:** Support for uploading and displaying media files with tweets.
 
 
 ## Tech Stack
