@@ -1,6 +1,6 @@
 # TweetHub
 
-TweetHub is a Django-based web application that allows users to create, view, edit, and delete tweets. It includes functionalities for user authentication and profile management. The application features an admin interface for managing tweets and users.
+TweetHub is a full-stack web application built with Django, allowing users to create, view, edit, and delete tweets. It includes functionalities for user authentication and profile management. The application features an admin interface for managing tweets and users.
 
 ## Deployed
 
@@ -16,15 +16,17 @@ You can access the live application at the following link: [Visit TweetHub](http
 - **Admin Interface:** Admins can manage users and tweets through the Django admin panel.
 - **Media Handling:** Support for uploading and displaying media files with tweets.
 
-
 ## Tech Stack
 
-- **Django 5.1.1**: A high-level Python web framework for rapid development.
-- **Python 3.10**: The programming language used to develop the application.
-- **SQLite**: The database engine used for development and testing.
-- **HTML/CSS**: For the structure and styling of web pages.
-- **Bootstrap**: A front-end framework used for responsive design (included in Django admin).
-- **PythonAnywhere**: The hosting platform where the application is deployed.
+- **Backend**: 
+  - Django: Framework for building the server-side logic and handling database operations.
+
+- **Frontend**: 
+  - HTML/CSS: Basic web technologies for layout and styling.
+  - Bootstrap: Framework for responsive design and styling.
+
+- **Database**: 
+  - SQLite (or configured database): For storing user data and tweets.
 
 ## Project Structure
 
