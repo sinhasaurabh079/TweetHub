@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %} Home - Tweets {% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-4">All Tweets</h1>
+
+<a class="btn btn-primary mb-4" href="{% url 'tweet_create' %}">Create New Tweet</a>
+
+<div class="container">
+  <div class="row d-flex gap-3 justify-content-start">
+    {% for tweet in tweets %}
+      <div class="card" style="width: 18rem;">
+        {% if tweet.photo %}
+          <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet Photo">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ tweet.user.username }}</h5>
+          <p class="card-text">{{ tweet.text }}</p>
+          <p class="text-muted">Posted on {{ tweet.created_at|date:"M d, Y" }}</p>
+          {% if tweet.user == user %}
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger ms-2">Delete</a>
+          {% endif %}
+        </div>
+      </div>
+    {% empty %}
+      <p>No tweets available yet. Be the first to <a href="{% url 'tweet_create' %}">create a tweet</a>.</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

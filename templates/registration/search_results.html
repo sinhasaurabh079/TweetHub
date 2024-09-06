@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %} Search Results {% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-4">Search Results{% if query %} for "{{ query }}"{% endif %}</h1>
+
+<div class="container">
+  <div class="row d-flex gap-3 justify-content-start">
+    {% for tweet in tweets %}
+      <div class="card" style="width: 18rem;">
+        {% if tweet.photo %}
+          <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet Photo">
+        {% endif %}
+        <div class="card-body">
+          <p class="card-text">{{ tweet.text }}</p>
+          <p class="text-muted">Posted on {{ tweet.created_at|date:"M d, Y" }}</p>
+          <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger ms-2">Delete</a>
+        </div>
+      </div>
+    {% empty %}
+      <p>No tweets found{% if query %} for "{{ query }}"{% endif %}.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Chai aur tweet
+{% endblock %}
+
+{% block content %}
+<h2 class ='text-center mt -4'> 
+    {% if form.instance.pk %}
+        Edit tweet
+    {% else %} 
+        Create tweet
+    {% endif %}
+</h2>
+    <form method = "post" enctype = "multipart/form-data" class = "form" style = 'align-center'>
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-warning" type = "submit"> Submit </button>
+    </form>
+    <a href="{% url 'tweet_list' %}"> Back to Tweet List </a>
+
+
+{% endblock %}

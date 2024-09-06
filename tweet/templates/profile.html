@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %} {{ user.username }}'s Profile {% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-4">Profile</h1>
+
+<div class="container">
+  <!-- User Information Section on Top -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title mt-4">User Information</h5>
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tweets Section with 3 tweets per row -->
+  <h3 class="text-center mt-4">Your Tweets</h3>
+
+  <div class="row">
+    {% for tweet in tweets %}
+      <div class="col-md-4 d-flex align-items-stretch">
+        <div class="card mb-4" style="width: 100%;">
+          {% if tweet.photo %}
+            <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet Photo">
+          {% endif %}
+          <div class="card-body">
+            <p class="card-text">{{ tweet.text }}</p>
+            <p class="text-muted">Posted on {{ tweet.created_at|date:"M d, Y" }}</p>
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger ms-2">Delete</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <div class="col-12 text-center">
+        <p>You haven't tweeted yet. <a href="{% url 'tweet_create' %}">Create your first tweet</a>.</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

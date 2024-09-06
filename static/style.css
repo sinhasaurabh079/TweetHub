@@ -1,0 +1,27 @@
+/* Custom styles for light mode */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.text-dark {
+  color: #212529 !important;
+}
+
+/* Custom styles for dark mode */
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+.text-light {
+  color: #f8f9fa !important;
+}
+
+.tweet-card {
+  width: 18rem;
+  height: 24rem; /* Adjust the height as needed */
+}
+
+.tweet-card .card-img-top {
+  height: 12rem; /* Adjust the height of the image as needed */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
